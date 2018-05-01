@@ -25,7 +25,6 @@ auto async_hello(int a, int b, CompletionTokenT &&token) {
 const auto coro_entry = [](asio::yield_context yield) {
     while (true) {
         std::cout << "1 + 2 = " << async_hello(1, 2, yield) << std::endl;
-        io_service.post(yield);
     }
 };
 
